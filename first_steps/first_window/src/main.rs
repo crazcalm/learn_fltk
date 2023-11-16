@@ -12,9 +12,10 @@ fn main() {
     // This is from the WidgetBase Trait
     let mut window = Window::new(100, 100, 400, 300, "My Window");
 
+    // Note: calls like this must happen before you "show" the window.
+    // DoubleWindow implements Clone: https://docs.rs/fltk/latest/fltk/window/struct.DoubleWindow.html#trait-implementations
     window.clone().center_screen();
 
-    // State that you are done modifying the window
     // Note: docs state that this "ends a group"
     // https://docs.rs/fltk/latest/fltk/window/type.Window.html#method.end
     // GroupExt docs -- https://docs.rs/fltk/latest/fltk/prelude/trait.GroupExt.html
